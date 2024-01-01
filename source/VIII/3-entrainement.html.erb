@@ -115,8 +115,8 @@ let quarante_deux = List.map (fun x -> x + 42)
 
 (* Ici on ne peut pas utiliser d’application partielle, mais on utilise fun : *)
 let moyenne liste =
-  List.fold_left (fun x y -> x +. y) 0.0 liste in
-  total /. (List.length liste)
+  let total = List.fold_left (fun x y -> x +. y) 0.0 liste in
+  total /. float_of_int(List.length liste)
     <% end %>
 </section>
 
